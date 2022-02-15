@@ -12,7 +12,7 @@ load_dotenv()
 # Using Chrome to access web
 driver = webdriver.Chrome()
 # Open the website
-driver.get('https://cas.ucdavis.edu/cas/login?service=https%3a%2f%2fhem.ucdavis.edu%2findex-redirect.aspx')
+driver.get('https://hem.ucdavis.edu')
 # Select the id box
 id_box = driver.find_element(By.NAME, 'username')
 # Send id information
@@ -31,7 +31,7 @@ driver.switch_to.frame(iframe)
 push_button = driver.find_element(By.CSS_SELECTOR, '#auth_methods > fieldset > div.row-label.push-label > button')
 push_button.click()
 
-# Wait 5 seconds for user to authenticate
+# Wait 12 seconds for user to authenticate
 time.sleep(12)
 # now on the HEM home page
 survey_button = driver.find_element(By.CSS_SELECTOR, "#ctl03 > div.mt-3 > div > a")
