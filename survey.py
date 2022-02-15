@@ -25,14 +25,16 @@ pass_box.send_keys(os.getenv("password"))
 login_button = driver.find_element(By.NAME, 'submit')
 # Click login
 login_button.click()
+# wait for the buttons to show up
+time.sleep(3)
 # Click the button that sends you a push notif
 iframe = driver.find_element(By.ID, "duo_iframe")
 driver.switch_to.frame(iframe)
 push_button = driver.find_element(By.CSS_SELECTOR, '#auth_methods > fieldset > div.row-label.push-label > button')
 push_button.click()
 
-# Wait 12 seconds for user to authenticate
-time.sleep(12)
+# Wait 5 seconds for user to authenticate
+time.sleep(5)
 # now on the HEM home page
 survey_button = driver.find_element(By.CSS_SELECTOR, "#ctl03 > div.mt-3 > div > a")
 survey_button.click()
